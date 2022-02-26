@@ -1,0 +1,27 @@
+<div class="p-5">
+    
+    <h4>Auto de propietario</h4>
+    <div class="input-group mb-3">
+        <input [(ngModel)]="nombre_propietario" type="text" class="form-control" placeholder="Busque autos por nombre" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <button (click)="getAutos()" class="input-group-text" id="basic-addon2">Buscar</button>
+      </div>
+      
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre Propietario</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Color</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let auto of autos_propietario">
+          <tr class="table-active">
+            <th>{{auto.nombre}}</th>
+            <td>{{auto.placa}}</td>
+            <td>{{auto.marca}}</td>
+            <td>{{auto.color}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,51 @@
+<div class=" p-5">
+    <div class="row pt-5">
+     
+        <div class="col-lg-3">
+         <h3>Lista de Propietarios</h3>
+           
+            
+        </div>
+
+    </div>
+    <div class="row p-2">
+        <div *ngIf="loading" class="text-center">
+            <div class="spinner-border text-success" role="status"></div>
+        </div>
+        
+        <div  class="col pt-3">
+         
+           <div  class="row">
+             
+             <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre Propietario</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Direccion</th>
+                  <th scope="col">identidad</th>
+                  <th scope="col">email</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col" >Accion</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let prop of data_propietario">
+                <tr class="table-active">
+                  <th>{{prop.nombre}}</th>
+                  <td>{{prop.apellido}}</td>
+                  <td>{{prop.direccion}}</td>
+                  <td>{{prop.identificacion}}</td>
+                  <td>{{prop.email}}</td>
+                  <td>{{prop.telefono}}</td>
+                  <td><button type="button" class="btn btn-outline-success">Actualizar</button> 
+                    <button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+                </tr>
+              </tbody>
+            </table>
+           </div>
+            
+        </div>
+
+    </div>
+
+</div>

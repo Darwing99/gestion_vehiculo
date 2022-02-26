@@ -1,0 +1,79 @@
+<div class="p-5">
+    <h4>Autos</h4>
+    <div class=" input-group mb-3">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Placa</th>
+                <th scope="col">vin</th>
+                <th scope="col">linea</th>
+                <th scope="col">cilindrada</th>
+                <th scope="col">chasis</th>
+                <th scope="col">Color</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let auto of autos_list">
+              <tr class="table-active">
+                <th>{{auto.id}}</th>
+                <td>{{auto.placa}}</td>
+                <td>{{auto.vin}}</td>
+                <td>{{auto.linea}}</td>
+                <td>{{auto.cilindrada}}</td>
+                <td>{{auto.color}}</td>
+                <td>{{auto.chasis}}</td>
+                <td><button type="button" class="btn btn-outline-success">Actualizar</button> 
+                  <button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+
+     
+    </div>
+    <div class="pt-5" >
+        <form action="">
+          
+            <div class="mb-3 row">
+              <label for="placa" class="col-lg-1 col-form-label">placa</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="placa">
+              </div>
+              <label for="linea" class="col-lg-1 col-form-label">linea</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="linea">
+              </div>
+              <label for="chasis" class="col-lg-1 col-form-label">chasis</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="chasis">
+              </div>
+            </div>
+            
+
+            <div class="mb-3 row">
+              <label for="linea" class="col-lg-1 col-form-label">linea</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="linea">
+              </div>
+              <label for="cilindrada" class="col-lg-1 col-form-label">cilindrada</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="cilindrada">
+              </div>
+              <label for="color" class="col-lg-1 col-form-label">color</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="color">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+              </div>
+            </div>
+
+            
+
+
+        </form>
+      
+    </div>
+</div>

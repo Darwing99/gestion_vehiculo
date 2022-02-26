@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "tarjet":"",
+        "secure":false,
+        "logLevel":"debug"
+    }
+}
