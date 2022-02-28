@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutosPropietarioComponent } from './components/autos-propietario/autos-propietario.component';
 import { AutosComponent } from './components/autos/autos.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AutosComponent } from './components/autos/autos.component';
     NavbarComponent,
     DashboardComponent,
     AutosPropietarioComponent,
-    AutosComponent
+    AutosComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,

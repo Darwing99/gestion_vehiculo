@@ -30,8 +30,8 @@
                   <th scope="col" >Accion</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let prop of data_propietario">
-                <tr class="table-active">
+              <tbody>
+                <tr  *ngFor="let prop of data_propietario; " class="table-active">
                   <th>{{prop.nombre}}</th>
                   <td>{{prop.apellido}}</td>
                   <td>{{prop.direccion}}</td>
@@ -39,8 +39,8 @@
                   <td>{{prop.email}}</td>
                   <td>{{prop.fecha_nacimiento}}</td>
                   <td>{{prop.telefono}}</td>
-                  <td><button type="button" class="btn btn-outline-success">Actualizar</button> 
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+                  <td><button  type="button" class="btn btn-outline-success">Actualizar</button> 
+                    <button (click)="deleteUser(prop.id)"  type="button" class="btn btn-outline-danger">Eliminar</button></td>
                 </tr>
               </tbody>
             </table>

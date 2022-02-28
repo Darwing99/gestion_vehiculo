@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { delay } from 'rxjs';
 import { Propietario } from 'src/app/models/propietarios';
 
 import { PropietariosService } from 'src/app/services/propietarios.service';
@@ -41,6 +42,7 @@ export class DashboardComponent implements OnInit {
   
   } 
   guardarData(){
+    
       this._propietarios.setPropietarios( {
         nombre:this.nombre,
         apellido:this.apellido,
@@ -50,9 +52,13 @@ export class DashboardComponent implements OnInit {
         telefono:this.telefono,
         email:this.email
       
-      }).subscribe(((data:any)=>{
-        alert("Propietario guardado"+data.placa);
-      }));
+      }).subscribe();
+  }
+  deleteUser(i?:number){
+ 
+    this._propietarios.deletePropietarios(i).subscribe();
+    delay(1000);
+    alert("propietario borrado")
   }
  
 }

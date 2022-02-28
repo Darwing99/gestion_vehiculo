@@ -14,8 +14,8 @@
                 <th scope="col">Accion</th>
               </tr>
             </thead>
-            <tbody *ngFor="let auto of autos_list">
-              <tr class="table-active">
+            <tbody >
+              <tr *ngFor="let auto of autos_list" class="table-hover">
                 <th>{{auto.id}}</th>
                 <td>{{auto.placa}}</td>
                 <td>{{auto.vin}}</td>
@@ -24,7 +24,7 @@
                 <td>{{auto.chasis}}</td>
                 <td>{{auto.color}}</td>
                 <td><button type="button" class="btn btn-outline-success">Actualizar</button> 
-                  <button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+                  <button (click)="deleteAuto(auto.id)" type="button" class="btn btn-outline-danger">Eliminar</button></td>
               </tr>
             </tbody>
           </table>
@@ -35,9 +35,7 @@
     </div>
     <div class="pt-5" >
         <form >
-          <div *ngIf="guardado" class="alert alert-primary" role="alert">
-           Auto Guardado!
-          </div>
+        
           
             <div class="mb-3 row">
               <label for="placa" class="col-lg-1 col-form-label">placa</label>

@@ -19,10 +19,10 @@ import { PropietariosService } from 'src/app/services/propietarios.service';
 })
 export class AutosComponent implements OnInit {
   autos_list?:AutosList[];
-  guardado=false;
+  guardar=false;
   placa='';linea=''; chasis='';vin=''; cilindrada=''; color='';propietario='';
   modelo='';  marca=''; tipo='';
-  guardar=false;
+ 
   data_propietario?:Propietario[];
   marca_list?:Marca[];
   tipo_list?:Tipo[];
@@ -47,7 +47,7 @@ export class AutosComponent implements OnInit {
   validacion(){
     this.guardar=(this.placa.length==0 || this.chasis.length==0 || this.vin.length==0
       || this.cilindrada.length==0 || this.color.length==0 || this.propietario.length==0
-      ||this.modelo.length==0 || this.marca.length==0 || this.tipo.length==0)?true :false;
+      ||this.modelo.length==0 || this.marca.length==0 || this.tipo.length==0) ?true :false;
       return this.guardar;
   }
   get_listAutos(){
@@ -92,14 +92,18 @@ export class AutosComponent implements OnInit {
         id_tipo:this.tipo
       }).subscribe();
       alert("Auto guardado!");
-      this.guardado=true;
       delay(2000);
       this.get_listAutos();
-      this.guardado=false;
+    
     }else{
      
     }
    
+  }
+  deleteAuto(id?:number){
+    this._autos.delAuto(id).subscribe();
+    alert("auto eliminado");
+    this.get_listAutos();
   }
 
 

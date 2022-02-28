@@ -14,7 +14,7 @@ data_propietario?:Propietario[];
 uri='https://137.184.224.36/project_evaluacion/Views/';
 url=this.uri+'propietarios/read_propietarios.php/';
 urlpost='https://137.184.224.36/project_evaluacion/Views/propietarios/create_propietarios.php/';
-
+urldelete="http://137.184.224.36/project_evaluacion/Views/propietarios/delete_propietarios.php?id="
   constructor(private http:HttpClient) {
 
 
@@ -30,6 +30,11 @@ urlpost='https://137.184.224.36/project_evaluacion/Views/propietarios/create_pro
 
    setPropietarios(lista:any):Observable<any>{
      const URL=this.urlpost;
+    
      return this.http.post(URL,lista);
    }
+   deletePropietarios(id?:number):Observable<any>{
+    const URL=this.urldelete+id;
+    return this.http.delete(URL);
+  }
 }
