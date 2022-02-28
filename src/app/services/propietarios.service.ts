@@ -14,7 +14,7 @@ data_propietario?:Propietario[];
 uri='https://137.184.224.36/project_evaluacion/Views/';
 url=this.uri+'propietarios/read_propietarios.php/';
 urlpost='https://137.184.224.36/project_evaluacion/Views/propietarios/create_propietarios.php/';
-urldelete="http://137.184.224.36/project_evaluacion/Views/propietarios/delete_propietarios.php?id="
+urldelete="https://137.184.224.36/project_evaluacion/Views/propietarios/delete_propietarios.php?id="
   constructor(private http:HttpClient) {
 
 
