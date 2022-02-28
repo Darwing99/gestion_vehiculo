@@ -34,7 +34,10 @@
      
     </div>
     <div class="pt-5" >
-        <form action="POST" onsubmit="">
+        <form >
+          <div *ngIf="guardado" class="alert alert-primary" role="alert">
+           Auto Guardado!
+          </div>
           
             <div class="mb-3 row">
               <label for="placa" class="col-lg-1 col-form-label">placa</label>
@@ -81,13 +84,13 @@
                 <option selected>Seleccione Modelo</option>
                 <option *ngFor="let lista of modelo_list" value="{{lista.id}}">{{lista.modelo}}</option>
               </select>
-              <select [(ngModel)]="propietario" class="form-control"  aria-label="multiple select example">
+              <select [(ngModel)]="propietario" class="form-control  m-3 col-lg-3"  aria-label="multiple select example">
                 <option selected>Seleccione Propietario</option>
                 <option *ngFor="let lista of data_propietario" value="{{lista.id}}">{{lista.nombre}}</option>
               </select>
             </div>
             <div class="col-auto">
-                <button (click)="guardarAuto()" type="submit" class="btn btn-primary mb-3">Guardar</button>
+                <button (click)="guardarAuto()" type="button" class="btn btn-primary mb-3">Guardar</button>
               </div>
             
 

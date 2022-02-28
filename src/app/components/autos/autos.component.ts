@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { delay } from 'rxjs';
 import { AutosList } from 'src/app/models/auto_list';
 import { Marca } from 'src/app/models/marca_list';
 import { Modelo } from 'src/app/models/modelo_list';
@@ -18,6 +19,7 @@ import { PropietariosService } from 'src/app/services/propietarios.service';
 })
 export class AutosComponent implements OnInit {
   autos_list?:AutosList[];
+  guardado=false;
   placa='';linea=''; chasis='';vin=''; cilindrada=''; color='';propietario='';
   modelo='';  marca=''; tipo='';
   guardar=false;
@@ -88,11 +90,14 @@ export class AutosComponent implements OnInit {
         id_modelo:this.modelo,
         id_marca:this.marca,
         id_tipo:this.tipo
-      }).subscribe((data)=>{
-        alert("usuario "+data.placa+"guardado")
-      });
+      }).subscribe();
+      alert("Auto guardado!");
+      this.guardado=true;
+      delay(2000);
+      this.get_listAutos();
+      this.guardado=false;
     }else{
-      alert("campos vacios");
+     
     }
    
   }
