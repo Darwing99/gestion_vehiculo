@@ -59,6 +59,7 @@ export class DashboardComponent implements OnInit {
     this._propietarios.deletePropietarios(i).subscribe();
     delay(1000);
     alert("propietario borrado")
+    this.obtenerData();
   }
  
 }
