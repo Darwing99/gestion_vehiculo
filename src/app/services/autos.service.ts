@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AutosService {
 
-  uri='http://137.184.224.36/project_evaluacion/Views/';
+  uri='https://137.184.224.36/project_evaluacion/Views/';
   url=this.uri+'autos_propietario/read_autos_propietario.php/?nombre=';
  
 

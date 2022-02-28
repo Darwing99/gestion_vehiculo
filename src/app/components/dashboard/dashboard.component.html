@@ -25,6 +25,7 @@
                   <th scope="col">Direccion</th>
                   <th scope="col">identidad</th>
                   <th scope="col">email</th>
+                  <th scope="col">Fecha Nacimiento</th>
                   <th scope="col">Telefono</th>
                   <th scope="col" >Accion</th>
                 </tr>
@@ -36,6 +37,7 @@
                   <td>{{prop.direccion}}</td>
                   <td>{{prop.identificacion}}</td>
                   <td>{{prop.email}}</td>
+                  <td>{{prop.fecha_nacimiento}}</td>
                   <td>{{prop.telefono}}</td>
                   <td><button type="button" class="btn btn-outline-success">Actualizar</button> 
                     <button type="button" class="btn btn-outline-danger">Eliminar</button></td>
@@ -47,5 +49,52 @@
         </div>
 
     </div>
+    <div class="pt-5" >
+      <form>
+        
+          <div class="mb-3 row">
+            <label for="Nombre" class="col-lg-1 col-form-label">Nombre</label>
+            <div class="col-lg-3">
+              <input [(ngModel)]="nombre" type="text" class="form-control" id="Nombre">
+            </div>
+            <label for="Apellido" class="col-lg-1 col-form-label">Apellido</label>
+            <div class="col-lg-3">
+              <input [(ngModel)]="apellido" type="text" class="form-control" id="Apellido">
+            </div>
+            <label for="Direccion" class="col-lg-1 col-form-label">Direccion</label>
+            <div class="col-lg-3">
+              <input [(ngModel)]="direccion" type="text" class="form-control" id="Direccion">
+            </div>
+          </div>
+          
+
+          <div class="mb-3 row">
+            <label for="identificacion" class="col-lg-1 col-form-label">identificacion</label>
+            <div class="col-lg-3">
+              <input [(ngModel)]="identificacion" type="text" class="form-control" id="identificacion">
+            </div>
+            <label for="email" class="col-lg-1 col-form-label">email</label>
+            <div  class="col-lg-3">
+              <input [(ngModel)]="email" type="text" class="form-control" id="email">
+            </div>
+            <label for="telefono" class="col-lg-1 col-form-label">telefono</label>
+            <div class="col-lg-3">
+              <input [(ngModel)]="telefono" type="text" class="form-control" id="telefono">
+            </div>
+            <label for="fecha" class="col-lg-1 col-form-label">Fecha Nacimiento</label>
+            <div class="pt-2 col-lg-3">
+              <input [(ngModel)]="fecha_nacimiento" type="date" class="form-control" id="fecha">
+            </div>
+            <div class="p-2 col-auto">
+              <button (click)="guardarData()"type="button" class="btn btn-primary mb-3">Guardar</button>
+            </div>
+          </div>
+
+          
+
+
+      </form>
+    
+  </div>
 
 </div>

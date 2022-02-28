@@ -1,4 +1,4 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 
@@ -11,31 +11,25 @@ import { Propietario } from '../models/propietarios';
 export class PropietariosService {
 data_propietario?:Propietario[];
 
-uri='http://137.184.224.36/project_evaluacion/Views/';
+uri='https://137.184.224.36/project_evaluacion/Views/';
 url=this.uri+'propietarios/read_propietarios.php/';
-urlpost=this.uri+'propietarios/create_propietarios.php/';
+urlpost='https://137.184.224.36/project_evaluacion/Views/propietarios/create_propietarios.php/';
 
   constructor(private http:HttpClient) {
 
 
    }
-   httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      
-      
-    } ),
    
-  }
+  
   
    getPropietarios():Observable<any>{
     
      const URL=this.url;
-     return this.http.get(URL,this.httpOptions);
+     return this.http.get(URL);
    }
 
-   setPropietarios(){
+   setPropietarios(lista:any):Observable<any>{
      const URL=this.urlpost;
-     return this.http.post(URL,this.data_propietario);
+     return this.http.post(URL,lista);
    }
 }

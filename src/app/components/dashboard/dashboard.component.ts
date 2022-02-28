@@ -10,8 +10,14 @@ import { PropietariosService } from 'src/app/services/propietarios.service';
 })
 export class DashboardComponent implements OnInit {
   data_propietario?:Propietario[];
-  propietario_seleccionado="jk";
-  listData:any[]=[];
+  nombre='';
+  email='';
+  telefono='';
+  apellido='';
+  direccion='';
+  identificacion='';
+  fecha_nacimiento='';
+
 
   loading=false;
   constructor(private _propietarios: PropietariosService,) {
@@ -32,7 +38,21 @@ export class DashboardComponent implements OnInit {
     });
   
    
-    this.loading=false;
+  
   } 
+  guardarData(){
+      this._propietarios.setPropietarios( {
+        nombre:this.nombre,
+        apellido:this.apellido,
+        identificacion:this.identificacion,
+        direccion:this.direccion,
+        fecha_nacimiento:this.fecha_nacimiento,
+        telefono:this.telefono,
+        email:this.email
+      
+      }).subscribe(((data:any)=>{
+        alert("Propietario guardado"+data.placa);
+      }));
+  }
  
 }
